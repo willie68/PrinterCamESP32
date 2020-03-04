@@ -21,7 +21,6 @@
 
 #include "fb_gfx.h"
 #include "fd_forward.h"
-#include "dl_lib.h"
 #include "fr_forward.h"
 
 #define ENROLL_CONFIRM_TIMES 5
@@ -432,6 +431,7 @@ static esp_err_t status_handler(httpd_req_t *req) {
 }
 
 static esp_err_t index_handler(httpd_req_t *req) {
+  Serial.println("http: index file");
   httpd_resp_set_type(req, "text/html");
   httpd_resp_set_hdr(req, "Access-Control-Allow-Origin", "*");
   httpd_resp_set_hdr(req, "Access-Control-Allow-Methods", "GET, POST");

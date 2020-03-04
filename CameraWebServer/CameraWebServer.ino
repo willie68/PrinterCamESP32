@@ -8,7 +8,7 @@
 
 #include "camera_pins.h"
 
-const char* ssid = "93w8562k";
+const char* ssid = "######";
 const char* password = "######";
 
 uint32_t startlight = 0;
@@ -118,8 +118,8 @@ void loop() {
 
 void doFlashLight( void * pvParameters ) {
   for (;;) {
-    Serial.print("flashlight start: ");
-    Serial.println(startlight);
+//    Serial.print("flashlight start: ");
+//    Serial.println(startlight);
     if ((startlight > 0) && (startlight < millis())) {
       digitalWrite(4,0);
       startlight = 0;
